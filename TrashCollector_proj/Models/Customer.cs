@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,6 +15,8 @@ namespace TrashCollector_proj.Models
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public DayOfWeek? WeeklyPickUpDay { get; set; }
+        public DateTime? OneTimePickup { get; set; }
 
         [ForeignKey("IdentityUser")]
         public string IdentityUserId { get; set; }
@@ -22,6 +25,9 @@ namespace TrashCollector_proj.Models
         [ForeignKey("Address")]
         public int AddressId { get; set; }
         public Address Address { get; set; }
-
+       
+        [ForeignKey("TempPickUpSuspension")]
+        public int TempPickUpSuspensionId { get; set; }
+        public TempPickUpSuspension TempPickUpSuspension { get; set; }
     }
 }
