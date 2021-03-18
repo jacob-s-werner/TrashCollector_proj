@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TrashCollector_proj.Models;
 
 namespace TrashCollector_proj.Data
 {
@@ -13,6 +14,8 @@ namespace TrashCollector_proj.Data
             : base(options)
         {
         }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -22,6 +25,14 @@ namespace TrashCollector_proj.Data
             {
                 Name = "Admin",
                 NormalizedName = "ADMIN"
+            }, new IdentityRole
+            {
+                Name = "Customer",
+                NormalizedName = "CUSTOMER"
+            }, new IdentityRole
+            {
+                Name = "Employee",
+                NormalizedName = "EMPLOYEE"
             }
             );
         }
