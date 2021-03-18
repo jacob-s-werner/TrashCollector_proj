@@ -19,6 +19,8 @@ namespace TrashCollector_proj.Data
         public DbSet<Address> Addresses { get; set; }
         public DbSet<TempPickUpSuspension> TempPickUpSuspensions { get; set; }
         public DbSet<ChargeToCustomer> ChargesToCustomers { get; set; }
+        public DbSet<OneTimePickup> OneTimePickups { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)

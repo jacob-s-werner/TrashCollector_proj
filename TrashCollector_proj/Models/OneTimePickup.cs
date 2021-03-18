@@ -7,20 +7,14 @@ using System.Threading.Tasks;
 
 namespace TrashCollector_proj.Models
 {
-    public class ChargeToCustomer
+    public class OneTimePickup
     {
         [Key]
         public int Id { get; set; }
-        public DateTime? TimeOfPickup { get; set; }
-        public double ChargeAmount { get; set; }
-        public string Description { get; set; }
-       
+        public DateTime? PickupTime { get; set; }
+        
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
-
-        [ForeignKey("Employee")]
-        public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
     }
 }

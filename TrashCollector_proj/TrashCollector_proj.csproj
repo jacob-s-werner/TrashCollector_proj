@@ -1,9 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>aspnet-TrashCollector_proj-734F7941-185C-487B-839A-C92A20B806FD</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20210318210152_NewDbSetsAdded401PM18March.cs" />
+    <Compile Remove="Data\Migrations\20210318210152_NewDbSetsAdded401PM18March.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210318210408_NewDbSetsAdded403PM18MarchFIXED.cs" />
+    <Compile Remove="Data\Migrations\20210318210408_NewDbSetsAdded403PM18MarchFIXED.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.12" />
