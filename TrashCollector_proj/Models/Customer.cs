@@ -29,5 +29,6 @@ namespace TrashCollector_proj.Models
         [ForeignKey("TempPickUpSuspension")]
         public int TempPickUpSuspensionId { get; set; }
         public TempPickUpSuspension TempPickUpSuspension { get; set; }
+
     }
 }

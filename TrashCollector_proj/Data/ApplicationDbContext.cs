@@ -18,6 +18,8 @@ namespace TrashCollector_proj.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<TempPickUpSuspension> TempPickUpSuspensions { get; set; }
+        public DbSet<ChargeToCustomer> ChargesToCustomers { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
