@@ -15,7 +15,7 @@ namespace TrashCollector_proj.Models
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DayOfWeek? WeeklyPickUpDay { get; set; }
+        public DayOfTheWeek WeeklyPickUpDay { get; set; }
 
         [ForeignKey("IdentityUser")]
         public string IdentityUserId { get; set; }
@@ -26,8 +26,9 @@ namespace TrashCollector_proj.Models
         public Address Address { get; set; }
 
         [NotMapped]
-        List<ChargeToCustomer> ListOfCurrentCharges;
-        List<OneTimePickup> ListOfCurrentOneTimePickups;
-        List<TempPickUpSuspension> ListOfCurrentTempPickUpSuspensions;
+        public List<ChargeToCustomer> ListOfCurrentCharges;
+        public List<OneTimePickup> ListOfCurrentOneTimePickups;
+        public List<TempPickUpSuspension> ListOfCurrentTempPickUpSuspensions;
+        public SelectList DaysOfTheWeek;
     }
 }

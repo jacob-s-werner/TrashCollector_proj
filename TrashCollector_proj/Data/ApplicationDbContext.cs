@@ -20,8 +20,7 @@ namespace TrashCollector_proj.Data
         public DbSet<TempPickUpSuspension> TempPickUpSuspensions { get; set; }
         public DbSet<ChargeToCustomer> ChargesToCustomers { get; set; }
         public DbSet<OneTimePickup> OneTimePickups { get; set; }
-
-
+        public DbSet<DayOfTheWeek> DaysOfTheWeek { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -29,10 +28,6 @@ namespace TrashCollector_proj.Data
             builder.Entity<IdentityRole>()
             .HasData(
             new IdentityRole
-            {
-                Name = "Admin",
-                NormalizedName = "ADMIN"
-            }, new IdentityRole
             {
                 Name = "Customer",
                 NormalizedName = "CUSTOMER"
@@ -42,6 +37,44 @@ namespace TrashCollector_proj.Data
                 NormalizedName = "EMPLOYEE"
             }
             );
+
+            builder.Entity<DayOfTheWeek>()
+                .HasData(
+            new DayOfTheWeek
+            {
+                Id = 1,
+                Day = "Sunday"
+            },
+            new DayOfTheWeek
+            {
+                Id = 2,
+                Day = "Monday"
+            },
+            new DayOfTheWeek
+            {
+                Id = 3,
+                Day = "Tuesday"
+            },
+            new DayOfTheWeek
+            {
+                Id = 4,
+                Day = "Wednesday"
+            },
+            new DayOfTheWeek
+            {
+                Id = 5,
+                Day = "Thursday"
+            },
+            new DayOfTheWeek
+            {
+                Id = 6,
+                Day = "Friday"
+            },
+            new DayOfTheWeek
+            {
+                Id = 7,
+                Day = "Saturday"
+            });
         }
     }
 }
