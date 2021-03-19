@@ -15,6 +15,9 @@ namespace TrashCollector_proj.Models
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        [ForeignKey("DayOfTheWeek")]
+        public string WeeklyPickUpDayId { get; set; }
         public DayOfTheWeek WeeklyPickUpDay { get; set; }
 
         [ForeignKey("IdentityUser")]
